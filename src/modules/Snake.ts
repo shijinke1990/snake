@@ -44,6 +44,9 @@ class Snake {
     }
 
     set Y(value: number) {
+        if (this.Y === value) {
+            return;
+        }
         if (value < 0 || value > 290) {
             throw new Error('撞墙了')
         }
