@@ -77,17 +77,13 @@ npm i -D webpack webpack-cli typescript ts-loader html-webpack-plugin clean-webp
 
    ```json
    {
-   	...
    	"scripts":{
-   		...
-       "start":"webpack serve --open chrome.exe" //windows
-       "dev":"webpack serve --open Google\ Chrome.app" //macos
-       ...
+       "start":"webpack serve --open chrome.exe"
+       "dev":"webpack serve --open Google\ Chrome.app"
    	}
-   	...
    }
    ```
-
+   
 6. 安装**bable**
 
    ```bash
@@ -129,47 +125,4 @@ npm i -D webpack webpack-cli typescript ts-loader html-webpack-plugin clean-webp
 }
 
 ```
-
-# index.html
-
-html模板文件
-
-```html
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <title>贪吃蛇</title>
-</head>
-<body>
-    <div id="main">
-        <div id="stage">
-            <div id="snake">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <div id="score-panel">
-            <div>
-                SCORE: <span id="score">0</span>
-            </div>
-            <div id="panel">
-                LEVEL: <span id="level">1</span>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-```
-
-# Snake.ts
-
-```typescript
-
-```
-
-
-
-
 
