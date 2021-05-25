@@ -1,48 +1,48 @@
-class ScorePanel {
-
+// 定义表示记分牌的类
+class ScorePanel{
+    // score和level用来记录分数和等级
     score = 0;
     level = 1;
 
-    scoreElement: HTMLElement;
-    levelElement: HTMLElement;
+    // 分数和等级所在的元素，在构造函数中进行初始化
+    scoreEle: HTMLElement;
+    levelEle: HTMLElement;
 
+    // 设置一个变量限制等级
     maxLevel: number;
+    // 设置一个变量表示多少分时升级
     upScore: number;
 
-    constructor(maxLevel: number = 100, upScore: number = 100) {
-        this.scoreElement = document.getElementById('score')!
-        this.levelElement = document.getElementById('level')!
-        this.maxLevel = maxLevel
-        this.upScore = upScore
+    constructor(maxLevel: number = 10, upScore: number = 10) {
+        this.scoreEle = document.getElementById('score')!;
+        this.levelEle = document.getElementById('level')!;
+        this.maxLevel = maxLevel;
+        this.upScore = upScore;
     }
 
-    addScore() {
-
-        this.scoreElement.innerHTML = ++this.score + ""
-        //this.calculateLevel()
-        if (this.score % this.upScore === 0) {
-            this.levelUp()
-        }
-
-    }
-
-    levelUp() {
-        if (this.level < this.maxLevel) {
-            this.levelElement.innerHTML = ++this.level + ''
+    //设置一个加分的方法
+    addScore(){
+        // 使分数自增
+        this.scoreEle.innerHTML = ++this.score + '';
+        // 判断分数是多少
+        if(this.score % this.upScore === 0){
+            this.levelUp();
         }
     }
 
-
-
-
-    // calculateLevel() {
-    //     if (this.score > 0 && this.score % this.upScore === 0 && this.level < this.maxLevel) {
-    //         this.level = this.score / this.upScore
-    //         this.levelElement.innerHTML = this.level + ''
-    //     }
-    // }
-
-
+    // 提升等级的方法
+    levelUp(){
+        if(this.level < this.maxLevel){
+            this.levelEle.innerHTML = ++this.level + '';
+        }
+    }
 }
 
-export default ScorePanel
+export default ScorePanel;
+
+
+// 测试代码
+// const scorePanel = new ScorePanel(100, 2);
+// for(let i=0; i<200; i++){
+//     scorePanel.addScore();
+// }
